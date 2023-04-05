@@ -4,7 +4,7 @@ SOURCES=get_integer.c factorial.c combination.c main.c
 OBJECTS=$(SOURCES:.c=.o)
 TARGET=combination
 
-all: $(SOURCES) $(EXECUTABLE)
+all: $(SOURCES) $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $@
