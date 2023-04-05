@@ -1,17 +1,16 @@
 CC=gcc
-CFLAGS=-c -Wall
-LDFLAGS=
+CFLAGS=-c -std=c99 -Wall
 SOURCES=get_integer.c factorial.c combination.c main.c
 OBJECTS=$(SOURCES:.c=.o)
-EXECUTABLE=combination
+TARGET=combination
 
 all: $(SOURCES) $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@
 
 .c.o:
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf $(OBJECTS) $(EXECUTABLE)
+	rm -rf $(OBJECTS) $(TARGET)
